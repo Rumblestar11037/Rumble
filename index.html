@@ -505,7 +505,7 @@
                 <div class="fact-card">
                     <h3>Игровая индустрия</h3>
                     <img src="https://images.steamusercontent.com/ugc/1920249469914125053/7CA872A23422F8C3CABE81987FE55BA6952B57C8/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Gaming">
-                    <p>Стал частью игровой культуры через Garry's Mod и другие игры</p>
+                    <p>Стал частью игровой культуры через Garry's Mod</p>
                 </div>
                 <div class="fact-card">
                     <h3>Вирусность</h3>
@@ -565,20 +565,11 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Maxwell the Cat Fan Page. Создано для поклонников Максвелла</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-            "Крутись, Максвелл, крутись!"
-        </p>
-        <div class="social-links">
-            <a href="#">TikTok</a>
-            <a href="#">Instagram</a>
-            <a href="#">Garry's Mod</a>
-            <a href="#">YouTube</a>
-        </div>
+        <p>&copy; 2026 Maxwell the Cat Fan Page.</p>
     </footer>
 
     <script>
-        // Плавная прокрутка для навигации
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -592,7 +583,6 @@
             });
         });
 
-        // Анимация при прокрутке
         const observerOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
@@ -607,7 +597,6 @@
             });
         }, observerOptions);
 
-        // Наблюдение за секциями
         document.querySelectorAll('section').forEach(section => {
             section.style.opacity = "0";
             section.style.transform = "translateY(20px)";
@@ -615,7 +604,6 @@
             observer.observe(section);
         });
 
-        // Эффект параллакса для header
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const header = document.querySelector('header');
