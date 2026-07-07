@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxwell the Cat</title>
+    <title>Maxwell the Cat - Легенда Интернета</title>
     <style>
         * {
             margin: 0;
@@ -13,23 +13,23 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #FAF0E6;
             color: #333;
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            background: #2C2C2C;
+            color: #FAF0E6;
             text-align: center;
             padding: 3rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
 
         header h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         header p {
@@ -38,12 +38,12 @@
         }
 
         nav {
-            background: #2a5298;
+            background: #333333;
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         nav ul {
@@ -55,7 +55,7 @@
         }
 
         nav a {
-            color: white;
+            color: #FAF0E6;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -64,7 +64,7 @@
         }
 
         nav a:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(250,240,230,0.2);
             transform: translateY(-2px);
         }
 
@@ -79,19 +79,19 @@
             margin: 2rem 0;
             padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         h2 {
-            color: #2a5298;
+            color: #2C2C2C;
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
-            border-bottom: 4px solid #667eea;
+            border-bottom: 4px solid #404040;
             padding-bottom: 0.5rem;
         }
 
         h3 {
-            color: #1e3c72;
+            color: #333333;
             font-size: 1.5rem;
             margin: 1.5rem 0 1rem;
         }
@@ -105,7 +105,35 @@
             max-width: 100%;
             height: auto;
             border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .spinning-gif {
+            display: block;
+            margin: 2rem auto;
+            max-width: 400px;
+            border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
         }
 
         .facts-grid {
@@ -116,8 +144,8 @@
         }
 
         .fact-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: #404040;
+            color: #FAF0E6;
             padding: 1.5rem;
             border-radius: 10px;
             text-align: center;
@@ -129,15 +157,27 @@
         }
 
         .fact-card h3 {
-            color: white;
+            color: #FAF0E6;
             margin-top: 0;
             font-size: 1.3rem;
+        }
+
+        .fact-card img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .fact-card p {
+            margin-top: 1rem;
         }
 
         .timeline {
             position: relative;
             padding-left: 2rem;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #404040;
             margin: 2rem 0;
         }
 
@@ -153,15 +193,15 @@
             top: 0.5rem;
             width: 20px;
             height: 20px;
-            background: #667eea;
+            background: #404040;
             border-radius: 50%;
             border: 4px solid white;
-            box-shadow: 0 0 0 4px #667eea;
+            box-shadow: 0 0 0 4px #404040;
         }
 
         .timeline-date {
             font-weight: bold;
-            color: #667eea;
+            color: #404040;
             font-size: 1.1rem;
         }
 
@@ -173,7 +213,7 @@
         }
 
         .meme-card {
-            background: #f8f9fa;
+            background: #FAF0E6;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -184,6 +224,12 @@
             transform: scale(1.05);
         }
 
+        .meme-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
         .meme-card-content {
             padding: 1.5rem;
         }
@@ -192,17 +238,17 @@
             font-style: italic;
             font-size: 1.2rem;
             color: #555;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #404040;
             padding-left: 1.5rem;
             margin: 1.5rem 0;
-            background: #f8f9fa;
+            background: #FAF0E6;
             padding: 1.5rem;
             border-radius: 0 10px 10px 0;
         }
 
         footer {
-            background: #1e3c72;
-            color: white;
+            background: #2C2C2C;
+            color: #FAF0E6;
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
@@ -213,25 +259,15 @@
         }
 
         .social-links a {
-            color: white;
-            font-size: 1.5rem;
+            color: #FAF0E6;
+            font-size: 1.2rem;
             margin: 0 1rem;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .social-links a:hover {
-            color: #667eea;
-        }
-
-        .spinning-cat {
-            animation: spin 10s linear infinite;
-            display: inline-block;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            color: #404040;
         }
 
         @media (max-width: 768px) {
@@ -250,8 +286,8 @@
         }
 
         .fun-fact-box {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
+            background: #404040;
+            color: #FAF0E6;
             padding: 2rem;
             border-radius: 15px;
             margin: 2rem 0;
@@ -259,9 +295,15 @@
         }
 
         .fun-fact-box h3 {
-            color: white;
+            color: #FAF0E6;
             font-size: 1.8rem;
             margin-bottom: 1rem;
+        }
+
+        .fun-fact-box img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 1rem 0;
         }
 
         table {
@@ -281,19 +323,40 @@
         }
 
         th {
-            background: #667eea;
-            color: white;
+            background: #404040;
+            color: #FAF0E6;
             font-weight: bold;
         }
 
         tr:hover {
-            background: #f5f5f5;
+            background: #FAF0E6;
+        }
+
+        .gif-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .gif-container img {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .audio-container {
+            margin: 1rem 0;
+        }
+
+        .audio-container audio {
+            width: 100%;
+            max-width: 300px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🐱 Maxwell the Cat</h1>
+        <h1>Maxwell the Cat</h1>
         <p>Легендарный крутящийся кот, покоривший интернет</p>
     </header>
 
@@ -303,7 +366,6 @@
             <li><a href="#history">История</a></li>
             <li><a href="#meme">Мем</a></li>
             <li><a href="#facts">Факты</a></li>
-            <li><a href="#popularity">Популярность</a></li>
         </ul>
     </nav>
 
@@ -311,13 +373,13 @@
         <section id="about">
             <h2>Кто такой Максвелл?</h2>
             <div class="hero-image">
-                <p style="font-size: 1.2rem; color: #555;">🐾 Черно-белый кот в смокинге, ставший интернет-сенсацией</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdUGXKCNuOJeerS9-LToSrgKk6V2IqFNwA0pALXMaKAKTuSRHQ6cjgwMQ&s=10" alt="Maxwell the Cat">
             </div>
             <p>
-                <strong>Максвелл</strong> (англ. Maxwell the Cat, настоящее имя ― Джесс) ― это домашняя кошка, 
-                ставшая популярной в Интернете после того, как превратилась в вирусный мем [[19]]. 
+                <strong>Максвелл</strong> (англ. Maxwell the Cat, настоящее имя — Джесс) — это домашняя кошка, 
+                ставшая популярной в Интернете после того, как превратилась в вирусный мем. 
                 Этот очаровательный черно-белый кот в смокинге покорил сердца миллионов пользователей 
-                по всему миру в октябре и ноябре 2022 года [[1]].
+                по всему миру в октябре и ноябре 2022 года.
             </p>
             
             <div class="quote">
@@ -356,11 +418,11 @@
 
         <section id="history">
             <h2>История популярности</h2>
+            <div class="gif-container">
+                <img src="https://static.wikia.nocookie.net/silly-cat/images/d/d5/Maxwell.png/revision/latest?cb=20231001194454" alt="Spinning Maxwell">
+            </div>
             <p>
-                Максвелл стал вирусным феноменом, известным также как <strong>"Spinning Cat"</strong> 
-                (Крутящийся кот) [[3]]. Мем особенно популярен в игровом сообществе и появился 
-                благодаря Garry's Mod, где известен своей низкополигональной 3D-моделью, 
-                которая крутится под музыку [[2]].
+                Максвелл стал вирусным феноменом, известным также как <strong>"Spinning Cat"</strong>. Мем особенно популярен в игровом сообществе и появился благодаря Garry's Mod, где известен своей низкополигональной 3D-моделью, которая крутится под музыку.
             </p>
 
             <div class="timeline">
@@ -370,11 +432,11 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">Garry's Mod</div>
-                    <p>Появление 3D-модели крутящегося кота в игре, что сделало его легендой среди геймеров [[7]]</p>
+                    <p>Появление 3D-модели крутящегося кота в игре, что сделало его легендой среди геймеров</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">TikTok и Instagram</div>
-                    <p>Тысячи видео и reels с Максвеллом набирают миллионы просмотров [[2]]</p>
+                    <p>Тысячи видео и reels с Максвеллом набирают миллионы просмотров</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2024-2026</div>
@@ -387,35 +449,43 @@
             <h2>Феномен мема</h2>
             <p>
                 Максвелл известен прежде всего как <strong>крутящийся кот</strong> — низкополигональная 
-                3D-модель, которая вращается под приятную музыку [[2]]. Этот гипнотизирующий контент 
-                захватил социальные сети по всему миру [[18]].
+                3D-модель, которая вращается под приятную музыку. Этот гипнотизирующий контент 
+                захватил социальные сети по всему миру.
             </p>
+
+            <div class="gif-container">
+                <img src="https://media.tenor.com/kglDzTqoEUAAAAAM/maxwell-cat.gif" alt="Maxwell Spinning Animation">
+            </div>
 
             <div class="meme-showcase">
                 <div class="meme-card">
+                    <img src="https://media.tenor.com/Jojpr9QgMLoAAAAM/maxwell-maxwell-spin.gif" alt="Spinning Cat">
                     <div class="meme-card-content">
-                        <h3>🎵 Spinning Cat</h3>
+                        <h3>Spinning Cat</h3>
                         <p>Знаменитое видео с крутящимся котом под музыку стало одним из самых узнаваемых мемов 2022 года</p>
                     </div>
                 </div>
                 <div class="meme-card">
+                    <img src="https://images.steamusercontent.com/ugc/1892100688970359666/AA6BE13267C749FF84015F14546949A98390DB83/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Garry's Mod">
                     <div class="meme-card-content">
-                        <h3>🎮 Garry's Mod</h3>
-                        <p>Максвелл вошел в игровой мир как пользовательский контент и стал легендой среди геймеров [[7]]</p>
+                        <h3>Garry's Mod</h3>
+                        <p>Максвелл вошел в игровой мир как пользовательский контент</p>
                     </div>
                 </div>
                 <div class="meme-card">
+                    <img src="https://media.tenor.com/30WXBNQ4mhwAAAAM/maxwell-cat-cat.gif" alt="Social Media">
                     <div class="meme-card-content">
-                        <h3>📱 TikTok & Instagram</h3>
-                        <p>Более 10,000 reels с Максвеллом в Instagram и тысячи видео в TikTok [[2]]</p>
+                        <h3>TikTok & Instagram</h3>
+                        <p>Более 10,000 рилсов с Максвеллом в Instagram и тысячи видео в TikTok</p>
                     </div>
                 </div>
             </div>
 
             <div class="fun-fact-box">
-                <h3>🎯 Интересный факт</h3>
+                <h3>Интересный факт</h3>
+                <img src="https://i.ytimg.com/vi/YRvOePz2OqQ/sddefault.jpg" alt="10 hour video">
                 <p>Существуют 10-часовые версии музыки с крутящимся Максвеллом, 
-                которые пользователи смотрят полностью! [[25]]</p>
+                которые пользователи смотрят полностью!</p>
             </div>
         </section>
 
@@ -423,27 +493,38 @@
             <h2>Интересные факты</h2>
             <div class="facts-grid">
                 <div class="fact-card">
-                    <h3>🎨 Окрас</h3>
+                    <h3>Окрас</h3>
+                    <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyNmw3Zm90cm9rd2NkM3Nqbmh4eXZ2MGdlYzhtbWdjdWZkeWs1bG85cyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/mYXkkesVtPYzkaupKz/giphy.gif" alt="Tuxedo cat">
                     <p>Черно-белый кот в смокинге — один из самых элегантных окрасов</p>
                 </div>
                 <div class="fact-card">
-                    <h3>🌍 Глобальность</h3>
-                    <p>Мем стал вирусным по всему миру,跨越 языковые барьеры</p>
+                    <h3>Глобальность</h3>
+                    <img src="https://media.tenor.com/UIRVsd1TU9gAAAAM/maxwell-maxwell-the-cat.gif" alt="Global meme">
+                    <p>Мем стал вирусным по всему миру, пересекая языковые барьеры</p>
                 </div>
                 <div class="fact-card">
-                    <h3>🎮 Игровая индустрия</h3>
+                    <h3>Игровая индустрия</h3>
+                    <img src="https://images.steamusercontent.com/ugc/1920249469914125053/7CA872A23422F8C3CABE81987FE55BA6952B57C8/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Gaming">
                     <p>Стал частью игровой культуры через Garry's Mod и другие игры</p>
                 </div>
                 <div class="fact-card">
-                    <h3>📊 Вирусность</h3>
+                    <h3>Вирусность</h3>
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9c467c22-b8e3-4c7e-854f-c8ec37cabc6f/dfmpe4e-b8896582-b353-4f0e-871d-a04bf278dfb8.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi85YzQ2N2MyMi1iOGUzLTRjN2UtODU0Zi1jOGVjMzdjYWJjNmYvZGZtcGU0ZS1iODg5NjU4Mi1iMzUzLTRmMGUtODcxZC1hMDRiZjI3OGRmYjguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.n3e9w0VnVWZRA7JwjBERza_qfWLd5uGE5MVDjxg9j9w" alt="Viral">
                     <p>Миллионы просмотров и тысячи созданных видео с котом</p>
                 </div>
                 <div class="fact-card">
-                    <h3>🎵 Музыка</h3>
+                    <h3>Музыка</h3>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="https://www.myinstants.com/media/sounds/maxwell-the-cat-theme.mp3" type="audio/mpeg">
+                            Ваш браузер не поддерживает аудио элемент.
+                        </audio>
+                    </div>
                     <p>Ассоциируется с успокаивающей музыкой в крутящихся видео</p>
                 </div>
                 <div class="fact-card">
-                    <h3>💜 Сообщество</h3>
+                    <h3>Сообщество</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSknB6Bg9TnYaeKO03tQh9MxgbyXaN8WVcxOAfPdUJM00h9zY0Dfso2bCs&s=10" alt="Community">
                     <p>Объединил миллионы любителей котов по всему миру</p>
                 </div>
             </div>
@@ -452,52 +533,47 @@
             <p>
                 Стоит отметить, что существует также другой известный кот Максвелл, 
                 который носит камеру GoPro и стал знаменитостью в TikTok после того, 
-                как был заснят во время своих приключений по району и драк с другими котами [[11]].
+                как был заснят во время своих приключений по району и драк с другими котами.
             </p>
         </section>
 
         <section id="popularity">
             <h2>Популярность в социальных сетях</h2>
+            <div class="gif-container">
+                <img src="https://media.tenor.com/UIRVsd1TU9gAAAAM/maxwell-maxwell-the-cat.gif" alt="Maxwell Popular">
+            </div>
             <p>
                 Максвелл стал настоящим интернет-феноменом, охватившим множество платформ:
             </p>
             
-            <ul style="font-size: 1.1rem; line-height: 2; margin: 1.5rem 0;">
-                <li>📸 <strong>Instagram:</strong> Более 10,000 reels с Максвеллом [[2]]</li>
-                <li>🎵 <strong>TikTok:</strong> Тысячи видео с хэштегом #maxwellcat</li>
-                <li>🎮 <strong>Gaming:</strong> Интеграция в игры как пользовательский контент [[7]]</li>
-                <li>🖼️ <strong>Pinterest:</strong> Десятки досок, посвященных коту</li>
-                <li> <strong>YouTube & RUTUBE:</strong> Видео с крутящимся котом набирают миллионы просмотров</li>
-                <li>💬 <strong>Meme Platforms:</strong> Присутствует на всех основных мем-платформах [[1]]</li>
+            <ul style="font-size: 1.1rem; line-height: 2; margin: 1.5rem 0; list-style: none;">
+                <li><strong>Instagram:</strong> Более 10,000 рилсов с Максвеллом</li>
+                <li><strong>TikTok:</strong> Тысячи видео с хэштегом #maxwellcat</li>
+                <li><strong>Gaming:</strong> Интеграция в игры как пользовательский контент</li>
+                <li><strong>Pinterest:</strong> Десятки досок, посвященных коту</li>
+                <li><strong>YouTube & RUTUBE:</strong> Видео с крутящимся котом набирают миллионы просмотров</li>
+                <li><strong>Meme Platforms:</strong> Присутствует на всех основных мем-платформах</li>
             </ul>
 
             <div class="quote">
                 Максвелл — это черно-белый кот, который стал мемом и вошел в историю 
-                интернет-культуры как один из самых узнаваемых вирусных персонажей 2022 года
+                интернет-культуры как один из самых узнаваемых персонажей 2022 года
             </div>
         </section>
-
-        <section>
-            <h2>Галерея</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; padding: 2rem;">
-                🐾 Максвелл — символ радости и умиротворения в мире интернет-мемов 🐾
-            </p>
-            <div style="text-align: center; font-size: 5rem; margin: 2rem 0;">
-                🐱
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Maxwell the Cat Fan Page. Создано с ❤️ для поклонников Максвелла</p>
+        <p>&copy; 2026 Maxwell the Cat Fan Page. Создано для поклонников Максвелла</p>
         <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-            "Крутись, Максвелл, крутись!" 🎵
+            "Крутись, Максвелл, крутись!"
         </p>
         <div class="social-links">
-            <a href="#">📱 TikTok</a>
-            <a href="#">📸 Instagram</a>
-            <a href="#">🎮 Garry's Mod</a>
-            <a href="#">📹 YouTube</a>
+            <a href="#">TikTok</a>
+            <a href="#">Instagram</a>
+            <a href="#">Garry's Mod</a>
+            <a href="#">YouTube</a>
         </div>
     </footer>
 
